@@ -1,0 +1,26 @@
+{
+  "name": "message-broker",
+  "version": "1.0.0",
+  "description": "Decentralized message passing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "decentralized",
+    "messaging",
+    "socketio",
+    "dht"
+  ],
+  "author": "covertness",
+  "license": "MIT",
+  "devDependencies": {
+    "coffee-script": "^1.10.0"
+  },
+  "dependencies": {
+    "dht-store": "^1.0.4",
+    "lru": "^1.2.0",
+    "socket.io": "^1.4.4",
+    "tchannel": "^3.6.2"
+  }
+}
