@@ -1,6 +1,7 @@
 events = require 'events'
 Store = require 'dht-store'
 TChannel = require 'tchannel'
+debug = require('debug')('message-broker')
 
 defaultOptions =
 	wanIp: '127.0.0.1'
@@ -54,6 +55,8 @@ module.exports =
 				if broker == null
 					cb {code: 1, desc: 'not found'}
 					return
+
+				debug 'dht store:', name, '->', broker
 
 				senderChannel = new TChannel
 				ch = senderChannel.makeSubChannel {

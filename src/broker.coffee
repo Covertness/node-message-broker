@@ -2,6 +2,7 @@ events = require 'events'
 socketio = require 'socket.io'
 LRU = require 'lru'
 RPC = require './rpc'
+debug = require('debug')('message-broker')
 
 defaultOptions =
 	# max items count
@@ -60,7 +61,7 @@ module.exports =
 				cb && cb 'user name is required'
 				return
 
-			console.log 'new user:', user.name
+			debug 'new user:', user.name
 
 			@rpc.registerUser user.name, (err) =>
 				if err
@@ -76,6 +77,8 @@ module.exports =
 				cb 'user name is required'
 				return
 
+			debug 'find user:', user.name
+
 			@rpc.findUser user.name, (err, broker) =>
 				cb err, broker
 
@@ -84,6 +87,8 @@ module.exports =
 			if user == null or user.name == undefined or peer == undefined or message == undefined
 				cb 'invalid message'
 				return
+
+			debug 'send message', message, 'to', peer, 'from', user.name
 
 			@rpc.sendMessage user.name, peer, message, (err, result) =>
 				if err
@@ -95,7 +100,7 @@ module.exports =
 
 		handleDisconnect: (user) ->
 			if user and user.name
-				console.log 'user disconnect:', user.name
+				debug 'user disconnect:', user.name
 
 				@routeTable.remove user.name
 
@@ -104,6 +109,8 @@ module.exports =
 			client = @routeTable.get recvName
 			if client == undefined
 				return
+
+			debug 'receive message', message
 
 			client.emit 'message', message.from, message.content
 
