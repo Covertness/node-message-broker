@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "debug": "^2.2.0",
-    "dht-store": "^1.0.4",
+    "dht-store": "^1.0.6",
     "lru": "^1.2.0",
     "socket.io": "^1.4.4",
     "tchannel": "^3.6.2"

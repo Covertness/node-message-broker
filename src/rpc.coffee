@@ -41,6 +41,12 @@ module.exports =
 				@channel.listen @options.tcPort, @options.wanIp, () =>
 					@emit 'ready'
 
+			@dhtStore.on 'node', (node) =>
+				debug 'new node', node
+
+			@dhtStore.on 'warning', (msg) =>
+				console.log 'warning:', msg
+
 
 		registerUser: (name, cb) ->
 			@dhtStore.kvPut name, @options.wanIp + ':' + @options.tcPort, (err, key, n) =>
