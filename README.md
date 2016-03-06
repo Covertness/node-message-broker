@@ -19,7 +19,7 @@ $ node index.js
 ```
 
 ### Setup the client
-Passing the messages through the Socket.IO protocol.
+Passing the messages through the Socket.IO protocol. Check out the [demo](http://covertness.github.io/chat/) for more details.
 
 ## Topology
 ![](topology.png)
