@@ -19,6 +19,6 @@ $ node index.js
 ```
 
 ### Setup the client
-Passing the messages through the Socket.IO protocol. [Here]() is a simple web demo.
+Passing the messages through the Socket.IO protocol. [Here](http://covertness.github.io/chat/) is a simple web demo.
 
 ## Topology
