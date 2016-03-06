@@ -1,6 +1,6 @@
 # node-message-broker
 
-A decentralized message passing broker based on [DHT](http://www.bittorrent.org/beps/bep_0005.html), [TChannel](https://github.com/uber/tchannel-node) and [Socket.IO](http://socket.io/).
+A decentralized message passing broker based on [DHT](http://www.bittorrent.org/beps/bep_0005.html), [TChannel](https://github.com/uber/tchannel-node) and [Socket.IO](http://socket.io/). [Here](http://covertness.github.io/chat/) is a simple web demo.
 
 ## Features
 - Decentralized
@@ -19,6 +19,7 @@ $ node index.js
 ```
 
 ### Setup the client
-Passing the messages through the Socket.IO protocol. [Here](http://covertness.github.io/chat/) is a simple web demo.
+Passing the messages through the Socket.IO protocol.
 
 ## Topology
+![](topology.png)
